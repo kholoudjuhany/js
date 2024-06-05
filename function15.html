@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+    function capitalizeWords(str) {
+        str[0].toUpperCase();
+        for (i = 0; i < str.length; i++) {
+            if(str[i] === " ")
+            str[i+1].toUpperCase();
+        }
+        return str;
+    }
+    console.log(capitalizeWords('hello world'));
+</script>
+
+</body>
+</html>
