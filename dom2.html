@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1 class = "item">Hello JavaScript</h1>
+    <p class = "item">Hello JavaScript</p>
+    <h2 class = "item">Hello JavaScript</h2>
+    <h3 class = "item">Hello JavaScript</h3>
+
+<script>
+   const items = document.getElementsByClassName("item");
+   for (let i = 0; i < items.length; i++) {
+    items[i].textContent = 'Class Item';
+}
+</script>
+
+</body>
+</html>

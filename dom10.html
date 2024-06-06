@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+    
+    <section>
+        <span>Hello JavaScript</span>
+        <span>Hello JavaScript</span>
+        <span>Hello JavaScript</span>
+        <span>Hello JavaScript</span>
+    </section>
+
+<script>
+     var sec = document.querySelector('section');
+     var spanElements = sec.getElementsByTagName('span');
+     for (var i = 0; i < spanElements.length; i++)
+        spanElements[i].textContent = "Span Element";
+        
+</script>
+
+</body>
+</html>
