@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <h1>Hello Local Storage</h1>
+    <script>
+        const obj = {name: "Kholoud", age: 24};
+
+        const objJSON = JSON.stringify(obj);
+
+        localStorage.setItem('object', objJSON);
+
+        const storedObj = localStorage.getItem('object');
+
+        const retObject = JSON.parse(storedObj);
+
+        console.log(retObject);  
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <h1>Hello Local Storage</h1>
+    <script>
+
+        // string
+        localStorage.setItem('name', 'Kholoud');
+        const name = localStorage.getItem('name');
+        console.log(name); 
+
+        // number
+        localStorage.setItem('age', 24);
+        const age = localStorage.getItem('age');
+        console.log(age); 
+
+        //boolean
+        localStorage.setItem('bool', false);
+        const wrong = localStorage.getItem('bool');
+        console.log(wrong); 
+
+        // array
+        const arr = [24, 1, 2000];
+        localStorage.setItem('array', arr);
+        var myArray = localStorage.getItem('array');
+        console.log(myArray);
+
+        // object
+        const obj = {hobby: "Swiming", won: 4};
+        const objJSON = JSON.stringify(obj);
+        localStorage.setItem('object', objJSON);
+        const storedObj = localStorage.getItem('object');
+        const retObject = JSON.parse(storedObj);
+        console.log(retObject);  
+    </script>
+</body>
+</html>
