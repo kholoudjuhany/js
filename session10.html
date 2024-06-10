@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <h1>Hello Session Storage</h1>
+    <script>
+        sessionStorage.setItem('name', 'Sara');
+    
+        var updatedName = sessionStorage.getItem('name');
+        updatedName = 'Zizi';
+        sessionStorage.setItem('name', updatedName);
+
+        var check = sessionStorage.getItem('name');
+        console.log(check); 
+    </script>
+</body>
+</html>

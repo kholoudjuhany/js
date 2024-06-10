@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <h1>Hello Session Storage</h1>
+    <script>
+
+        // string
+        sessionStorage.setItem('name', 'Kholoud');
+        const name = sessionStorage.getItem('name');
+        console.log(name); 
+
+        // number
+        sessionStorage.setItem('age', 24);
+        const age = sessionStorage.getItem('age');
+        console.log(age); 
+
+        //boolean
+        sessionStorage.setItem('bool', false);
+        const wrong = sessionStorage.getItem('bool');
+        console.log(wrong); 
+
+        // array
+        const arr = [24, 1, 2000];
+        sessionStorage.setItem('array', arr);
+        var myArray = sessionStorage.getItem('array');
+        console.log(myArray);
+
+        // object
+        const obj = {hobby: "Swiming", won: 4};
+        const objJSON = JSON.stringify(obj);
+        sessionStorage.setItem('object', objJSON);
+        const storedObj = sessionStorage.getItem('object');
+        const retObject = JSON.parse(storedObj);
+        console.log(retObject);  
+    </script>
+</body>
+</html>
