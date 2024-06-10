@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+    
+    <div>
+        <h1>Hello JavaScript Events</h1>
+        <p>Double click</p>
+        <button id="myBtn">Change Bg</button>
+    </div>
+
+<script>
+document.getElementById("myBtn").addEventListener("dblclick", function() {
+    document.querySelector("div").style.backgroundColor ='red';
+});
+        
+</script>
+
+</body>
+</html>

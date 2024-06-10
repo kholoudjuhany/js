@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="keyInput" placeholder="Press any key">
+
+    <script>
+        document.getElementById("keyInput").addEventListener("keydown", function(event) {
+            console.log("Key pressed: " + event.key);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        #display {
+            width: 500px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        #display img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        .button {
+            cursor: pointer;
+            padding: 10px;
+            margin: 5px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="display">
+    <img id="current" src="">
+</div>
+<button id="prev" class="button">Previous</button>
+<button id="next" class="button">Next</button>
+
+<script>
+    // Array of image URLs
+    const images = [
+        'bw1.jpg',
+        'bw4.jpg',
+        'bw7.jpg'
+    ];
+
+    // Current image index
+    let currentIndex = 0;
+
+    // Get the image element
+    const currentImage = document.getElementById('current');
+
+    // Function to update the displayed image
+    function updateImage() {
+        currentImage.src = images[currentIndex];
+    }
+
+    // Display the first image initially
+    updateImage();
+
+    // Button IDs and corresponding click handlers
+    const buttons = [
+        { id: 'prev', handler: () => currentIndex = (currentIndex - 1 + images.length) % images.length },
+        { id: 'next', handler: () => currentIndex = (currentIndex + 1) % images.length }
+    ];
+
+    // Attach event listeners using a for loop
+    for (let i = 0; i < buttons.length; i++) {
+        document.getElementById(buttons[i].id).addEventListener('click', () => {
+            buttons[i].handler();
+            updateImage();
+        });
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        #display {
+            width: 500px;
+            height: 200px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 20px;
+            overflow: auto;
+        }
+        .button {
+            cursor: pointer;
+            padding: 10px;
+            margin: 5px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="display">
+    Click the button to load content.
+</div>
+<button id="load" class="button">Load Content</button>
+
+<script>
+    const contentArray = [
+        "Content 1: My name is Kholoud Juhany.",
+        "Content 2: I'm 24 years old.",
+        "Content 3: I'm now trainee as full-stack developer.",
+        "Content 4: This is Dynamic Content Load.",
+    ];
+
+    const contentDisplay = document.getElementById('display');
+    const loadButton = document.getElementById('load');
+
+    
+    let currentContentIndex = 0;
+
+    function updateContent() {
+        if (currentContentIndex < contentArray.length) {
+            contentDisplay.innerHTML = contentArray[currentContentIndex];
+            currentContentIndex++;
+        } else {
+            contentDisplay.innerHTML = "No more content to display.";
+        }
+    }
+
+    loadButton.addEventListener('click', updateContent);
+</script>
+
+</body>
+</html>
