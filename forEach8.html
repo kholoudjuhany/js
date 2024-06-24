@@ -1,0 +1,24 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        const arr = ["Kholoud", "Saba'a", "Nagham", "Mohannad", "Lidya", "Joey"];
+        let count = 0;
+        arr.forEach(v => {
+            for (let i = 0; i < v.length; i++) {
+                if (v[i] === 'a') {
+                    count++;
+                    break;
+                }
+            }
+        });
+
+        console.log(count);
+
+    </script>
+</body>
+</html>

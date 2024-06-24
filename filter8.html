@@ -1,0 +1,20 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        const arr = [
+            {name: 'Kholoud', age: 24, city: 'Aqaba', turn: null},
+            {name: 'Mohannad', age: 19, city: 'Aqaba', turn: null},
+            {name: 'Nagham', age: 21, city: 'Irbid', turn: 7},
+            {name: 'Lidya', age: 18, city: 'Karak', turn: 6},
+            {name: 'Salem', age: 21, city: 'Maan', turn: 4},
+            {name: 'Khaled', age: 19, city: 'Irbid', turn: null},
+            {name: 'Yazan', age: 22, city: 'Amman', turn: 1},
+            {name: 'Sabaa', age: 19, city: 'Karak', turn: null}
+        ];
+        const newArr = arr.filter(v => v.turn != null);
+        console.log(newArr);
+    </script>
+</body>
+</html>
