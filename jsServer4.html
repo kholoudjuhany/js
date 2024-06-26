@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .display {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .divStyle {
+            background-color: #fff;
+            border: 2px solid #ff7f50;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            width: 150px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .divStyle:hover {
+            transform: scale(1.05);
+        }
+        .divStyle h2 {
+            font-size: 1.2em;
+            margin: 0 0 10px;
+            color: #ff4500;
+        }
+        .divStyle img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+    </style>
+
+
+</head>
+<body>
+    <div class = display>
+        
+    </div>
+
+
+    <script>
+        const fetchreq = fetch("https://jsonplaceholder.typicode.com/photos?albumId=1");
+        const response = fetchreq.then((response) => {
+            return response.json();
+        });
+        
+        fetchreq.catch(err => {alert(`request error: ${err}`)});
+        response.then((data) => {print(data);});
+        
+        const displayer = document.querySelector(".display");
+        function print(data)
+        {
+            let template = '';
+            data.forEach(v => {
+                template += `
+                <div class="divStyle">
+                <h2>${v.id}</h2>
+                <img src="${v.thumbnailUrl}" alt="${v.title}">
+                </div>`
+            })
+                displayer.innerHTML = template;
+            }
+    </script>
+
+
+</body>
+</html>

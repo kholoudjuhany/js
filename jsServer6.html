@@ -1,0 +1,93 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .display {
+            width: 100%;
+            max-width: 800px;
+        }
+        .divStyle {
+            background-color: #fff;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            margin-bottom: 10px;
+            transition: transform 0.3s;
+        }
+        .divStyle:hover {
+            transform: scale(1.02);
+        }
+        .divStyle h1 {
+            font-size: 1.5em;
+            margin: 0 0 10px;
+            color: #333;
+        }
+        .divStyle h2 {
+            font-size: 1.2em;
+            margin: 0 0 5px;
+            color: #666;
+        }
+        .divStyle p {
+            font-size: 1em;
+            margin: 0 0 5px;
+            color: #666;
+        }
+    </style>
+
+
+</head>
+<body>
+    <div class = display>
+        
+    </div>
+
+
+    <script>
+        const fetchreq = fetch("https://jsonplaceholder.typicode.com/users");
+        const response = fetchreq.then((response) => {
+            return response.json();
+        });
+        
+        fetchreq.catch(err => {alert(`request error: ${err}`)});
+        response.then((data) => {print(data);});
+        
+        const displayer = document.querySelector(".display");
+        function print(data)
+        {
+            let template = '';
+            data.forEach(v => {
+                template += `
+                <div class="divStyle">
+                <h1>${v.name}</h1>
+                <h2>${v.username}</h2>
+                <p>${v.email}</p>
+                <p>${v.address.street}</p>
+                <p>${v.address.suite}</p>
+                <p>${v.address.city}</p>
+                <p>${v.address.zipcode}</p>
+                <p>${v.address.geo.lat}</p>
+                <p>${v.address.geo.lng}</p>
+                </div>`
+            })
+                displayer.innerHTML = template;
+            }
+    </script>
+
+
+</body>
+</html>

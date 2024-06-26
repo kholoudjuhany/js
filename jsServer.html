@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .display {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .divStyle {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            width: calc(33% - 20px);
+        }
+        .divStyle h2 {
+            font-size: 1.2em;
+            margin: 0 0 10px;
+        }
+        .divStyle p {
+            margin: 0 0 10px;
+        }
+        .divStyle p small {
+            color: #888;
+        }
+    </style>
+
+
+</head>
+<body>
+    <div class = display>
+        
+    </div>
+
+
+    <script>
+        const fetchreq = fetch("https://jsonplaceholder.typicode.com/posts");
+        const response = fetchreq.then((response) => {
+            return response.json();
+        });
+        
+        fetchreq.catch(err => {alert(`request error: ${err}`)});
+        response.then((data) => {print(data);});
+        
+        const displayer = document.querySelector(".display");
+        function print(data)
+        {
+            let template = '';
+            data.forEach(v => {
+                template += `
+                <div class="divStyle"> 
+                <h2>${v.title}</h2>
+                <p>${v.body}</p>
+                </div>`
+            })
+                displayer.innerHTML = template;
+            }
+    </script>
+
+
+</body>
+</html>
